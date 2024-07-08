@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using MyDTO.MyContabilidad;
+
 namespace MyCTB.Catalogo.ApplicationService
 {
     internal class PlanCuentasListHandler : IRequestHandler<CuentaList, IEnumerable<PlanCuentasDTO>>
@@ -15,7 +16,7 @@ namespace MyCTB.Catalogo.ApplicationService
         }
 
         // el metodo debe ser del tipo PUBLIC porque asi lo exige MediatR
-        public async Task<IEnumerable<PlanCuentasDTO>> IRequestHandler<CuentaList, IEnumerable<PlanCuentasDTO>>.Handle(CuentaList request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<PlanCuentasDTO>> Handle(CuentaList request, CancellationToken cancellationToken)
         {
             var cuentasContables = await _unitOfWork.CuentaRepository
                 .Get_PlanCuentas_Async(
