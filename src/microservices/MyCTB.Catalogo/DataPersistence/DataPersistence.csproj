@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore" Version="8.0.6" />
+    <PackageReference Include="microsoft.extensions.configuration.usersecrets" Version="8.0.0" />
+    <PackageReference Include="oracle.entityframeworkcore" Version="8.23.40" />
+    <PackageReference Include="oracle.manageddataaccess.core" Version="23.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationService\ApplicationService.csproj" />
+    <ProjectReference Include="..\BusinessDomain\BusinessDomain.csproj" />
+  </ItemGroup>
+
 </Project>

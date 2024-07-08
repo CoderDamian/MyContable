@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using MyCTB.Catalogo.BusinessDomain;
 
 namespace MyCTB.Catalogo.ApplicationService;
 

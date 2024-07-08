@@ -19,4 +19,8 @@
     <Folder Include="UseCases\Cuenta Not\Commands\" />
   </ItemGroup>
 
+  <ItemGroup>
+	<InternalsVisibleTo Include="DataPersistence"/>
+  </ItemGroup>
+
 </Project>
