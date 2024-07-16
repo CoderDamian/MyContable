@@ -20,7 +20,7 @@ namespace MyCTB.Catalogo.ApplicationService
 
         async Task IRequestHandler<TipoAsientoUpdate>.Handle(TipoAsientoUpdate request, CancellationToken cancellationToken)
         {
-            if (String.IsNullOrEmpty(request.TipoAsientoDTO.User_Name))
+            if (String.IsNullOrEmpty(request.TipoAsientoDTO.UserName))
                 throw new ApplicationException(MyMessages.user_can_not_be_empty_or_null);
 
             TipoAsiento tipoAsiento = this._mapper.Map<TipoAsiento>(request.TipoAsientoDTO);

@@ -2,7 +2,7 @@
 using MyDTO.MyContabilidad;
 using MyCTB.Catalogo.BusinessDomain;
 
-namespace MyContabilidad.ApplicationService.Mappings
+namespace MyDTO.MyContabilidad
 {
     public class CentroCostoProfile : Profile
     {
@@ -15,7 +15,7 @@ namespace MyContabilidad.ApplicationService.Mappings
 
             CreateMap<CentroCosto, AddCentroCostoDTO>()
                 .ForMember(dest => dest.UserName, opt => opt.Ignore())
-                .ReverseMap();
+                .ReverseMap(); ;
 
             CreateMap<CentroCosto, UpdateCentroCostoDTO>()
                 .ForMember(dest => dest.User_Name, opt => opt.MapFrom(src => src.Updated_By))
