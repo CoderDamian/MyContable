@@ -34,7 +34,7 @@ namespace MyCTB.Catalogo.ApplicationService
             else
             {
                 await _unitOfWork.CentroCostoRepository
-                    .Add_Async(centroCostoPadreId: request.CentroCostoDTO.CentroCostoPadre,
+                    .Add_Async(centroCostoPadreId: request.CentroCostoDTO.PadreId,
                         nombre: request.CentroCostoDTO.Nombre,
                         userName: request.CentroCostoDTO.UserName)
                     .ConfigureAwait(false);

@@ -6,7 +6,7 @@ namespace MyCTB.Catalogo.BusinessDomain
     {
         internal string Nombre { get; private set; } = string.Empty;
         internal string Abreviatura { get; private set; } = string.Empty;
-        internal bool Es_Activa { get; private set; }
+        internal bool EsActiva { get; private set; }
         public ICollection<Secuencial> SecuencialesTiposAsientos { get; set; }
 
         public TipoAsiento()
@@ -30,7 +30,7 @@ namespace MyCTB.Catalogo.BusinessDomain
 
         public void Set_EsActiva(bool value)
         {
-            this.Es_Activa = value;
+            this.EsActiva = value;
         }
 
         public void Set_Nombre(string value)

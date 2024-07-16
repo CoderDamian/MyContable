@@ -2,7 +2,7 @@
 using MyDTO.MyContabilidad;
 using MyCTB.Catalogo.BusinessDomain;
 
-namespace MyContabilidad.ApplicationService.Mappings
+namespace MyDTO.MyContabilidad
 {
     public class TipoAsientoProfile : Profile
     {
@@ -22,8 +22,8 @@ namespace MyContabilidad.ApplicationService.Mappings
                 .ReverseMap();
 
             CreateMap<TipoAsiento, UpdateTipoAsientoDTO>()
-                .ForMember(dest => dest.User_Name, opt => opt.MapFrom(src => src.Updated_By))
-                .ForMember(dest => dest.Last_Updated_Date, opt => opt.MapFrom(src => src.Updated_Date))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Updated_By))
+                .ForMember(dest => dest.LastUpdatedDate, opt => opt.MapFrom(src => src.Updated_Date))
                 .ReverseMap();
         }
     }

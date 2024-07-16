@@ -19,7 +19,7 @@ namespace MyContabilidad.DataPersistence.Mappings
             builder.Property(p => p.Abreviatura)
                 .HasColumnName("ABREVIATURA");
 
-            builder.Property(p => p.Es_Activa)
+            builder.Property(p => p.EsActiva)
                 .HasColumnName("ES_ACTIVA");
 
             builder.Property(p => p.Created_By)

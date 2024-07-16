@@ -2,7 +2,7 @@
 using MyCTB.Catalogo.BusinessDomain;
 using MyDTO.MyContabilidad;
 
-namespace MyContabilidad.ApplicationService.Mappings
+namespace MyDTO.MyContabilidad
 {
     public class EjercicioProfile : Profile
     {

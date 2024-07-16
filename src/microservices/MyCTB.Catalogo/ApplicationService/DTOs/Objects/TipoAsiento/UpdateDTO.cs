@@ -5,8 +5,8 @@
         public int Id { get; set; }
         public string Nombre { get; set; } = string.Empty;
         public string Abreviatura { get; set; } = string.Empty;
-        public bool Es_Activa { get; set; }
-        public string User_Name { get; set; } = string.Empty;
-        public DateTime? Last_Updated_Date { get; set; }
+        public bool EsActiva { get; set; }
+        public string UserName { get; set; } = string.Empty;
+        public DateTime? LastUpdatedDate { get; set; }
     }
 }

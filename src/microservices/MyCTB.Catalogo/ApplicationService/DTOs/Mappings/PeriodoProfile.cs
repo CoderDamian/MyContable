@@ -2,7 +2,7 @@
 using MyDTO.MyContabilidad;
 using MyCTB.Catalogo.BusinessDomain;
 
-namespace MyContabilidad.ApplicationService.Mappings
+namespace MyDTO.MyContabilidad
 {
     public class PeriodoProfile : Profile
     {

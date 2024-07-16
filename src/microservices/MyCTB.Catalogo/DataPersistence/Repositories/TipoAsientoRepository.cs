@@ -59,7 +59,7 @@ namespace MyCTB.Catalogo.DataPersistence
             this._myDbContext.Attach(tipoAsiento);
             this._myDbContext.Entry(tipoAsiento).Property(p => p.Nombre).IsModified = true;
             this._myDbContext.Entry(tipoAsiento).Property(p => p.Abreviatura).IsModified = true;
-            this._myDbContext.Entry(tipoAsiento).Property(p => p.Es_Activa).IsModified = true;
+            this._myDbContext.Entry(tipoAsiento).Property(p => p.EsActiva).IsModified = true;
         }
     }
 }
