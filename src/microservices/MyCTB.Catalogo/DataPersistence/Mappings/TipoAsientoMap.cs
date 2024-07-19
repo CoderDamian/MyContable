@@ -22,13 +22,13 @@ namespace MyContabilidad.DataPersistence.Mappings
             builder.Property(p => p.EsActiva)
                 .HasColumnName("ES_ACTIVA");
 
-            builder.Property(p => p.Created_By)
+            builder.Property(p => p.CreatedBy)
                 .HasColumnName("CREATED_BY");
 
-            builder.Property(p => p.Updated_By)
+            builder.Property(p => p.UpdatedBy)
                 .HasColumnName("UPDATED_BY");
 
-            builder.Property(p => p.Updated_Date)
+            builder.Property(p => p.UpdatedDate)
                 .HasColumnName("UPDATED_DATE");
         }
     }

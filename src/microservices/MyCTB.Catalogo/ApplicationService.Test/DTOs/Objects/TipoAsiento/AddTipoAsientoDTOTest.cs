@@ -3,8 +3,9 @@ using Newtonsoft.Json;
 
 namespace MyDTO.MyContabilidad.Test
 {
-    public class AddTipoAsientoDTO_Should
+    public class AddTipoAsientoDTOTest
     {
+        // verifica que las propiedades del DTO sean accesibles y tengan los valores correctos
         [Fact]
         public void Valid_Creation()
         {
@@ -20,6 +21,7 @@ namespace MyDTO.MyContabilidad.Test
             Assert.Equal("userTest", tipoAsiento.UserName);
         }
 
+        // asegurar que un JSON puede ser convertido nuevamente a un DTO sin pérdida de datos
         [Fact]
         public void Valid_Deserialization()
         {
@@ -32,6 +34,7 @@ namespace MyDTO.MyContabilidad.Test
             Assert.Equal("userTest", expectedObject.UserName);
         }
 
+        // asegurar que el DTO puede ser convertido a JSON correctamente
         [Fact]
         public void Valid_Serialization()
         {

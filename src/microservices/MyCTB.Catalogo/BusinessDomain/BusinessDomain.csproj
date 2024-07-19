@@ -5,10 +5,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<InternalsVisibleTo Include="ApplicationService"/>
 		<InternalsVisibleTo Include="DataPersistence"/>
+		<InternalsVisibleTo Include="DataPersistence.Test"/>
 	</ItemGroup>
 
 </Project>

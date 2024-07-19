@@ -14,7 +14,7 @@ namespace MyDTO.MyContabilidad
             ShouldMapProperty = p => p.GetMethod == null ? throw new NullReferenceException() : p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
 
             CreateMap<Secuencial, AddSecuencialDTO>()
-                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Created_By))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.CreatedBy))
                 .ReverseMap();
 
             //CreateMap<Secuencial, ListSecuencialDTO>()

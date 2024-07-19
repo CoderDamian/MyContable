@@ -6,12 +6,12 @@ namespace MyCTB.Catalogo.BusinessDomain
     {
         public int Id { get; private set; }
         
-        internal string? Created_By { get; private set; }
+        internal string? CreatedBy { get; private set; }
         
-        internal string? Updated_By { get; private set; }
+        internal string? UpdatedBy { get; private set; }
         
         [ConcurrencyCheck]
-        public DateTime? Updated_Date { get; private set; }
+        public DateTime? UpdatedDate { get; private set; }
 
         public void Set_Id(int value)
             => this.Id = value;
@@ -20,28 +20,28 @@ namespace MyCTB.Catalogo.BusinessDomain
         {
             if (String.IsNullOrEmpty(value))
             {
-                Created_By = "";
+                CreatedBy = "";
             }
             else
             {
-                this.Created_By = value;
+                this.CreatedBy = value;
             }
         }
 
         public void Set_Last_UpdatedDate(DateTime? value)
         {
-            this.Updated_Date = value;
+            this.UpdatedDate = value;
         }
 
         public void Set_UpdatedBy(string? value)
         {
             if (String.IsNullOrEmpty(value))
             {
-                this.Updated_By = "";
+                this.UpdatedBy = "";
             }
             else
             {
-                this.Updated_By = value;
+                this.UpdatedBy = value;
             }
         }
     }
