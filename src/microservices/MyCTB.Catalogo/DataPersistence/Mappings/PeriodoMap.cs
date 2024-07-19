@@ -22,7 +22,7 @@ namespace MyContabilidad.DataPersistence.Mappings
             builder.Property(p => p.EsCerrado)
                 .HasColumnName("ES_CERRADO");
 
-            builder.Property(p => p.Updated_Date)
+            builder.Property(p => p.UpdatedDate)
                 .HasColumnName("UPDATED_DATE");
         }
     }

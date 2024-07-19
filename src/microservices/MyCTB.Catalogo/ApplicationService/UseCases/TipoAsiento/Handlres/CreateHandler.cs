@@ -25,7 +25,7 @@ namespace MyCTB.Catalogo.ApplicationService
             var tipoAsiento = this._mapper.Map<TipoAsiento>(request.TipoAsientoDTO);
 
             // Business rule: el nombre del Usuario que crea el registro no puede ser nulo o vacio
-            if (String.IsNullOrEmpty(tipoAsiento.Created_By))
+            if (String.IsNullOrEmpty(tipoAsiento.CreatedBy))
                 throw new ApplicationException(MyMessages.user_can_not_be_empty_or_null);
 
             // Business rule: un tipo nuevo siempre debe ser activa

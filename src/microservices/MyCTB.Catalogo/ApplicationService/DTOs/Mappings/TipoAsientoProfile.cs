@@ -15,15 +15,15 @@ namespace MyDTO.MyContabilidad
 
             CreateMap<TipoAsiento, AddTipoAsientoDTO>()
                 .ForMember(dest => dest.Descripcion, opt => opt.MapFrom(src => src.Nombre))
-                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Created_By))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.CreatedBy))
                 .ReverseMap();
 
             CreateMap<TipoAsiento, ListTiposAsientoDTO>()
                 .ReverseMap();
 
             CreateMap<TipoAsiento, UpdateTipoAsientoDTO>()
-                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Updated_By))
-                .ForMember(dest => dest.LastUpdatedDate, opt => opt.MapFrom(src => src.Updated_Date))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UpdatedBy))
+                .ForMember(dest => dest.LastUpdatedDate, opt => opt.MapFrom(src => src.UpdatedDate))
                 .ReverseMap();
         }
     }

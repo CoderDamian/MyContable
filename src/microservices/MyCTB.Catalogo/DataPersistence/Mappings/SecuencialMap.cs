@@ -22,10 +22,10 @@ namespace MyContabilidad.DataPersistence.Mappings
             builder.Property(p => p.Secuencia)
                 .HasColumnName("NUMERO_TIPO_ASIENTO");
 
-            builder.Property(p => p.Created_By)
+            builder.Property(p => p.CreatedBy)
                 .HasColumnName("CREATED_BY");
 
-            builder.Property(p => p.Updated_Date)
+            builder.Property(p => p.UpdatedDate)
                 .HasColumnName("UPDATED_DATE");
 
             builder.HasOne(s => s.Periodo).WithMany(p => p.SecuencialesTiposAsientos)

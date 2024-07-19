@@ -95,7 +95,7 @@ namespace MyCTB.Catalogo.DataPersistence
 
             this._myDbContext.Attach(centroCosto);
             this._myDbContext.Entry(centroCosto).Property(p => p.Nombre).IsModified = true;
-            this._myDbContext.Entry(centroCosto).Property(p => p.Updated_By).IsModified = true;
+            this._myDbContext.Entry(centroCosto).Property(p => p.UpdatedBy).IsModified = true;
         }
     }
 }

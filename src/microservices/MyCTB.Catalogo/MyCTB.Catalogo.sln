@@ -27,7 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{A048205B-30AD-487D-BED3-34B346342684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationService.Test", "ApplicationService.Test\ApplicationService.Test.csproj", "{1518977F-CE54-4AA0-B94B-90E5DC20ACB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationService.Test", "ApplicationService.Test\ApplicationService.Test.csproj", "{1518977F-CE54-4AA0-B94B-90E5DC20ACB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPersistence.Test", "DataPersistence.Test\DataPersistence.Test.csproj", "{B827C824-FE89-4B41-874F-D1729A90A9F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{1518977F-CE54-4AA0-B94B-90E5DC20ACB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1518977F-CE54-4AA0-B94B-90E5DC20ACB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1518977F-CE54-4AA0-B94B-90E5DC20ACB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B827C824-FE89-4B41-874F-D1729A90A9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B827C824-FE89-4B41-874F-D1729A90A9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B827C824-FE89-4B41-874F-D1729A90A9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B827C824-FE89-4B41-874F-D1729A90A9F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{FD2B387B-724A-4F5C-A8CA-C6118C22F681} = {D7C4239E-047B-4EDA-A642-B43FF6022BF6}
 		{A048205B-30AD-487D-BED3-34B346342684} = {D7C4239E-047B-4EDA-A642-B43FF6022BF6}
 		{1518977F-CE54-4AA0-B94B-90E5DC20ACB4} = {2033F7A5-61C1-4B50-AC27-93D928B26A73}
+		{B827C824-FE89-4B41-874F-D1729A90A9F9} = {FD2B387B-724A-4F5C-A8CA-C6118C22F681}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61BF964C-30A0-4BFF-A6AC-CAC120E82241}

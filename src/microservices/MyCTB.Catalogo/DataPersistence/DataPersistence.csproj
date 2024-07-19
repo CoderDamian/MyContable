@@ -1,21 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UserSecretsId>MyCTB_Catalogo</UserSecretsId>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="microsoft.entityframeworkcore" Version="8.0.6" />
-    <PackageReference Include="microsoft.extensions.configuration.usersecrets" Version="8.0.0" />
-    <PackageReference Include="oracle.entityframeworkcore" Version="8.23.40" />
-    <PackageReference Include="oracle.manageddataaccess.core" Version="23.4.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="microsoft.entityframeworkcore" Version="8.0.6" />
+		<PackageReference Include="microsoft.extensions.configuration.usersecrets" Version="8.0.0" />
+		<PackageReference Include="oracle.entityframeworkcore" Version="8.23.50" />
+		<PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.5.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ApplicationService\ApplicationService.csproj" />
-    <ProjectReference Include="..\BusinessDomain\BusinessDomain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ApplicationService\ApplicationService.csproj" />
+		<ProjectReference Include="..\BusinessDomain\BusinessDomain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="DataPersistence.Test"/>
+	</ItemGroup>
 
 </Project>
