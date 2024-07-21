@@ -1,26 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="automapper" Version="13.0.1" />
-    <PackageReference Include="mediatR" Version="12.3.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="automapper" Version="13.0.1" />
+		<PackageReference Include="mediatR" Version="12.3.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessDomain\BusinessDomain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BusinessDomain\BusinessDomain.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\Cuenta Not\Commands\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="UseCases\Cuenta Not\Commands\" />
+	</ItemGroup>
 
-  <ItemGroup>
-	<InternalsVisibleTo Include="DataPersistence"/>
-  </ItemGroup>
+	<ItemGroup>
+		<InternalsVisibleTo Include="DataPersistence"/>
+		<InternalsVisibleTo Include="WebServices"/>
+	</ItemGroup>
 
 </Project>
