@@ -10,6 +10,11 @@ namespace MyCTB.Catalogo.ApplicationService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
+        public CentroCostoGetToUpdateHandler()
+        {
+            
+        }
+
         internal CentroCostoGetToUpdateHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork;

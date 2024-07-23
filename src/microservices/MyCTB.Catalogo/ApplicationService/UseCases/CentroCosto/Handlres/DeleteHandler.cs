@@ -10,6 +10,11 @@ namespace MyCTB.Catalogo.ApplicationService
     {
         private readonly IUnitOfWork _unitOfWork;
 
+        public CentroCostoDeleteHandler()
+        {
+            
+        }
+
         internal CentroCostoDeleteHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;

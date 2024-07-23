@@ -9,6 +9,11 @@ namespace MyCTB.Catalogo.ApplicationService
     {
         private readonly IUnitOfWork _unitOfWork;
 
+        public PeriodoCreateHandler()
+        {
+            
+        }
+
         internal PeriodoCreateHandler(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));

@@ -12,7 +12,12 @@ namespace MyCTB.Catalogo.ApplicationService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        internal CentrosCostosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public CentrosCostosListHandler()
+        {
+
+        }
+
+        public CentrosCostosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;
