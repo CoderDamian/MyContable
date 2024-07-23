@@ -19,6 +19,11 @@ internal class CentroCostoUpdateHandler : IRequestHandler<CentroCostoUpdate>
         this._mapper = mapper;
     }
 
+    public CentroCostoUpdateHandler()
+    {
+        
+    }
+
     /// <summary>
     /// Caso de Uso: CU-CC-002
     /// </summary>

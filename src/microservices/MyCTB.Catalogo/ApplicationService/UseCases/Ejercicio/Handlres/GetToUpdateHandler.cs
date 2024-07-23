@@ -12,6 +12,11 @@ namespace MyCTB.Catalogo.ApplicationService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
+        public EjercicioGetToUpdateHandler()
+        {
+            
+        }
+
         internal EjercicioGetToUpdateHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork;

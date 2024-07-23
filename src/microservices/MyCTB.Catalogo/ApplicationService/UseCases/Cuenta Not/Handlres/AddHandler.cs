@@ -11,6 +11,11 @@ namespace MyCTB.Catalogo.ApplicationService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
+        public CuentaAddHandler()
+        {
+            
+        }
+
         internal CuentaAddHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork ?? throw new ArgumentNullException(MyMessages.uow_not_be_null);

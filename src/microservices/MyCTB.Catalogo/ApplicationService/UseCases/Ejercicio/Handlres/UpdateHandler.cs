@@ -10,6 +10,11 @@ namespace MyCTB.Catalogo.ApplicationService
     {
         private readonly IUnitOfWork _unitOfWork;
 
+        public EjercicioUpdateHandler()
+        {
+            
+        }
+
         internal EjercicioUpdateHandler(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork;

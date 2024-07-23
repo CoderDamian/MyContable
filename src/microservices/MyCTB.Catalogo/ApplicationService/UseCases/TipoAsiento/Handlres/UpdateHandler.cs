@@ -12,6 +12,11 @@ namespace MyCTB.Catalogo.ApplicationService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
+        public TipoAsientoUpdateHandler()
+        {
+            
+        }
+
         internal TipoAsientoUpdateHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));

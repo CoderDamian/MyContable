@@ -9,6 +9,11 @@ namespace MyCTB.Catalogo.ApplicationService
     {
         private readonly IUnitOfWork _unitOfWork;
 
+        public CentroCostoCreateHandler()
+        {
+            
+        }
+
         internal CentroCostoCreateHandler(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
@@ -34,7 +39,8 @@ namespace MyCTB.Catalogo.ApplicationService
             else
             {
                 await _unitOfWork.CentroCostoRepository
-                    .Add_Async(centroCostoPadreId: request.CentroCostoDTO.PadreId,
+                    .Add_Async(
+                        centroCostoPadreId: request.CentroCostoDTO.PadreId,
                         nombre: request.CentroCostoDTO.Nombre,
                         userName: request.CentroCostoDTO.UserName)
                     .ConfigureAwait(false);
