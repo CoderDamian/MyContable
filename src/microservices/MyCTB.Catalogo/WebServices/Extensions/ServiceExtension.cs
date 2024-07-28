@@ -4,33 +4,12 @@ using Microsoft.OpenApi.Models;
 using MyCTB.Catalogo.DataPersistence;
 using MyCTB.Catalogo.ApplicationService;
 using MyDTO.MyContabilidad;
+using Serilog;
 
 namespace MyCTB.Catalogo.WebServices
 {
     public static class ServiceExtension
     {
-        public static void Add_MyDataAccess(this IServiceCollection services)
-        {
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<ICuentaRepository, CuentaRepository>();
-
-            services.AddDbContext<MyDbContext>();
-        }
-
-        public static void Add_CQRS(this IServiceCollection services)
-        {
-            services.AddMediatR(cfg =>
-            {
-                cfg.RegisterServicesFromAssembly(typeof(PlanCuentasListHandler).Assembly);
-            });
-        }
-
-        /// <summary>
-        /// Add the authentication service by specifying the JWT bearer scheme
-        /// </summary>
-        /// <remarks>The domain and audience values are getting from the appsettings.json configuration file</remarks>
-        /// <param name="services"></param>
-        /// <param name="configuration"></param>
         public static void Add_Authentication(this IServiceCollection services, IConfiguration configuration)
         {
             //services.AddAuthentication(opt =>
@@ -48,12 +27,7 @@ namespace MyCTB.Catalogo.WebServices
             //    };
             //});
         }
-
-        public static void Add_Mappings(this IServiceCollection services)
-        {
-            services.AddAutoMapper(typeof(TipoAsientoProfile));
-        }
-
+        
         public static void Add_API_Documentation(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
@@ -84,5 +58,33 @@ namespace MyCTB.Catalogo.WebServices
 
             });
         }
+        
+        public static void Add_CQRS(this IServiceCollection services)
+        {
+            services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssembly(typeof(PlanCuentasListHandler).Assembly);
+            });
+        }
+        
+        public static void Add_Mappings(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(TipoAsientoProfile));
+        }
+
+        public static void Add_MyDataAccess(this IServiceCollection services)
+        {
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<ICuentaRepository, CuentaRepository>();
+
+            services.AddDbContext<MyDbContext>();
+        }
+
+        /// <summary>
+        /// Add the authentication service by specifying the JWT bearer scheme
+        /// </summary>
+        /// <remarks>The domain and audience values are getting from the appsettings.json configuration file</remarks>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
     }
 }
