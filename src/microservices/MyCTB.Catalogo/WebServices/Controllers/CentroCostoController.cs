@@ -63,6 +63,8 @@ namespace MyCTB.Catalogo.WebServices
         {
             try
             {
+                _logger.LogInformation("processing CetroCostoController ...");
+
                 var centrosCostos = await this._mediator.Send(new CentroCostoList()).ConfigureAwait(false);
 
                 return Ok(centrosCostos);
@@ -70,9 +72,11 @@ namespace MyCTB.Catalogo.WebServices
             catch (Exception ex)
             {
                 var errorId = Guid.NewGuid();
-                this._logger.LogError($"Error ocurred in API: {errorId} {ex.Message}");
+
+                _logger.LogError($"Error ocurred in API: {errorId} {ex.Message}");
 
                 ModelState.AddModelError(nameof(ex), ex.Message);
+
                 return ValidationProblem();
 
                 //return StatusCode(StatusCodes.Status500InternalServerError);
