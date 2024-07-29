@@ -6,6 +6,9 @@ using MyDTO.MyContabilidad;
 
 namespace MyCTB.Catalogo.WebServices
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [ApiController]
     [Route("api/v1/[controller]")]
     public class CentroCostoController : ControllerBase
@@ -40,6 +43,12 @@ namespace MyCTB.Catalogo.WebServices
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="centroCostoDTO"></param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public async Task<IActionResult> Delete([FromRoute] int id, [FromBody] DeleteCentroCostoDTO centroCostoDTO)
         {
@@ -71,9 +80,7 @@ namespace MyCTB.Catalogo.WebServices
             }
             catch (Exception ex)
             {
-                var errorId = Guid.NewGuid();
-
-                _logger.LogError($"Error ocurred in API: {errorId} {ex.Message}");
+                _logger.LogError(AppLogEvents.ReadNotFound, "{Message} {PilaLlamada}", ex.Message, ex);
 
                 ModelState.AddModelError(nameof(ex), ex.Message);
 

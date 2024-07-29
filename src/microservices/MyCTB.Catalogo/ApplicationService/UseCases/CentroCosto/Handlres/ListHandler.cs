@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Microsoft.Extensions.Logging;
+using AutoMapper;
 using MediatR;
 using MyDTO.MyContabilidad;
 
@@ -9,6 +10,7 @@ namespace MyCTB.Catalogo.ApplicationService
     /// </summary>
     internal class CentrosCostosListHandler : IRequestHandler<CentroCostoList, IEnumerable<ListCentrosCostosDTO>>
     {
+        private readonly ILogger _logger;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
@@ -17,8 +19,9 @@ namespace MyCTB.Catalogo.ApplicationService
 
         }
 
-        public CentrosCostosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public CentrosCostosListHandler(ILogger<CentrosCostosListHandler> logger, IUnitOfWork unitOfWork, IMapper mapper)
         {
+            this._logger = logger;
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;
         }
@@ -26,6 +29,8 @@ namespace MyCTB.Catalogo.ApplicationService
         // el metodo debe ser del tipo PUBLIC porque asi lo exige MediatR
         public async Task<IEnumerable<ListCentrosCostosDTO>> Handle(CentroCostoList request, CancellationToken cancellationToken)
         {
+            _logger.LogInformation("inside CentrosCostosListHandler ...");
+
             var centrosCostosDTOs = await this._unitOfWork.CentroCostoRepository
                 .Get_All_Async()
                 .ConfigureAwait(false);
