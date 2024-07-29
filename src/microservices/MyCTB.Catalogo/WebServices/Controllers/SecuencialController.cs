@@ -29,8 +29,9 @@ namespace MyCTB.Catalogo.WebServices
             }
             catch (Exception ex)
             {
-                var errorId = Guid.NewGuid();
-                this._logger.LogError($"Error ocurred in API: {errorId} {ex.Message}");
+                var errorId = 1;
+
+                _logger.LogError(errorId, "Error ocurred in API {message}", ex.Message);
 
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
