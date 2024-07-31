@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using MyDTO.MyContabilidad;
 
 namespace MyCTB.Catalogo.ApplicationService
@@ -31,11 +31,13 @@ namespace MyCTB.Catalogo.ApplicationService
         {
             _logger.LogInformation("inside CentrosCostosListHandler ...");
 
-            var centrosCostosDTOs = await this._unitOfWork.CentroCostoRepository
-                .Get_All_Async()
+            var centrosCostos = await this._unitOfWork.CentroCostoRepository
+                .GetAllAsync()
                 .ConfigureAwait(false);
 
-            return centrosCostosDTOs;
+            var centrosoCostosDTO = _mapper.Map<IEnumerable<ListCentrosCostosDTO>>(centrosCostos);
+
+            return centrosoCostosDTO;
         }
     }
 }
