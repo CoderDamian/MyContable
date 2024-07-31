@@ -23,6 +23,7 @@
 	<ItemGroup>
 		<InternalsVisibleTo Include="DataPersistence" />
 		<InternalsVisibleTo Include="WebServices" />
+		<InternalsVisibleTo Include="DataPersistence.Test"/>
 	</ItemGroup>
 
 </Project>

@@ -41,7 +41,11 @@ namespace MyCTB.Catalogo.DataPersistence
                 throw new DbUpdateConcurrencyException();
         }
 
-        public async Task<IEnumerable<ListCentrosCostosDTO>> Get_All_Async()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<CentroCosto>> GetAllAsync()
         {
             using var oracleConnection = new OracleConnection(this._myDbContext.Database.GetDbConnection().ConnectionString);
 
@@ -56,7 +60,7 @@ namespace MyCTB.Catalogo.DataPersistence
 
             DbDataReader dataReader = await command.ExecuteReaderAsync().ConfigureAwait(false);
 
-            Collection<ListCentrosCostosDTO> centrosCostosDTOs = new Collection<ListCentrosCostosDTO>();
+            Collection<CentroCosto> centrosCostosDTOs = new Collection<CentroCosto>();
 
             int nivel = 0;
             string space;
@@ -66,13 +70,11 @@ namespace MyCTB.Catalogo.DataPersistence
                 nivel = dataReader.GetInt32("level");
                 space = new string(' ', nivel);
 
-                centrosCostosDTOs.Add(new ListCentrosCostosDTO()
-                {
-                    Id = dataReader.GetInt32("id"),
-                    Nivel = nivel,
-                    Nombre = String.Concat(space, dataReader.GetString("centro_costo")),
-                    Es_Auxiliar = dataReader.GetBoolean("es_auxiliar")
-                });
+                centrosCostosDTOs.Add(
+                        new CentroCosto(
+                            centroCostoPadre: dataReader.GetInt32("centro_costo_id"), 
+                            nombre: String.Concat(space, dataReader.GetString("centro_costo")), 
+                            esAuxiliar: dataReader.GetBoolean("es_auxiliar")));
             }
 
             await dataReader.CloseAsync();

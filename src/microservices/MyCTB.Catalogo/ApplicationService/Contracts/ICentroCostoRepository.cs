@@ -1,5 +1,4 @@
 ﻿using MyCTB.Catalogo.BusinessDomain;
-using MyDTO.MyContabilidad;
 
 namespace MyCTB.Catalogo.ApplicationService
 {
@@ -9,7 +8,7 @@ namespace MyCTB.Catalogo.ApplicationService
 
         Task Delete_Async(int id, string updatedBy, DateTime? concurrency_token);
         
-        Task<IEnumerable<ListCentrosCostosDTO>> Get_All_Async();
+        Task<IEnumerable<CentroCosto>> GetAllAsync();
         
         Task<CentroCosto?> Get_By_Id_Async(int id);
         

@@ -16,7 +16,10 @@ namespace MyDTO.MyContabilidad
 
             CreateMap<CentroCosto, AddCentroCostoDTO>()
                 .ForMember(dest => dest.UserName, opt => opt.Ignore())
-                .ReverseMap(); ;
+                .ReverseMap(); 
+
+            CreateMap<CentroCosto, ListCentrosCostosDTO>()
+                .ReverseMap();
 
             CreateMap<CentroCosto, UpdateCentroCostoDTO>()
                 .ForMember(dest => dest.User_Name, opt => opt.MapFrom(src => src.UpdatedBy))

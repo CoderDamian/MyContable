@@ -7,7 +7,7 @@ namespace MyCTB.Catalogo.ApplicationService
     /// </summary>
     internal class CentroCostoCreateHandler : IRequestHandler<CentroCostoCreate>
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork? _unitOfWork;
 
         public CentroCostoCreateHandler()
         {
