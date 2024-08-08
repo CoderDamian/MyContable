@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApplicationService\ApplicationService.csproj" />
+    <ProjectReference Include="..\..\..\src\microservices\MyCTB.Catalogo\ApplicationService\ApplicationService.csproj" />
   </ItemGroup>
 
   <ItemGroup>
