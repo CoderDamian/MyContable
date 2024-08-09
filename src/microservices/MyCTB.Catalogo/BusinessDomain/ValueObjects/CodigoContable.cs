@@ -11,7 +11,7 @@
 
         public CodigoContable(string value)
         {
-            if (IsValueValid(value))
+            if (Is_Value_Valid(value))
             {
                 this.Value = value;
             }
@@ -21,7 +21,7 @@
             }
         }
 
-        private bool IsValueValid(string value)
+        private bool Is_Value_Valid(string value)
         {
             return true;
         }

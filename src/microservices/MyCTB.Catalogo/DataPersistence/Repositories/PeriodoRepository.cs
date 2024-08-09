@@ -50,10 +50,10 @@ namespace MyCTB.Catalogo.DataPersistence
                             periodos.Add(new ListPeriodoDTO()
                             {
                                 Id = reader.GetInt32("id"),
-                                Nombre_Ejercicio_Contable = reader.GetString("nombre_ejercicio"),
-                                Nombre_Periodo = reader.GetString("nombre_periodo"),
-                                Fecha_Inicial = reader.GetDateTime("fecha_inicial"),
-                                Fecha_Final = reader.GetDateTime("fecha_final"),
+                                NombreEjercicioContable = reader.GetString("nombre_ejercicio"),
+                                NombrePeriodo = reader.GetString("nombre_periodo"),
+                                FechaInicial = reader.GetDateTime("fecha_inicial"),
+                                FechaFinal = reader.GetDateTime("fecha_final"),
                                 EsCerrado = reader.GetBoolean("es_cerrado")
                             });
                         }

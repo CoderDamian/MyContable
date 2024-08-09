@@ -34,7 +34,7 @@ namespace MyCTB.Catalogo.ApplicationService
                 throw new ApplicationException(MyMessages.user_can_not_be_empty_or_null);
 
             // Business rule: un tipo nuevo siempre debe ser activa
-            tipoAsiento.Set_EsActiva(true);
+            tipoAsiento.Set_Es_Activa(true);
 
             await this._unitOfWork.TipoAsientoRepository.Add_Async(tipoAsientoContable: tipoAsiento).ConfigureAwait(false);
 

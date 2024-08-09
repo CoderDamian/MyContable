@@ -26,8 +26,8 @@ namespace MyCTB.Catalogo.ApplicationService
             var rowsAffected = await this._unitOfWork.EjercicioRepository.Update_Async(
                 id: request.EjercicioDTO.Id,
                 nombre: request.EjercicioDTO.Nombre,
-                user_name: request.EjercicioDTO.User_Name,
-                last_updated_date: request.EjercicioDTO.Last_Updated_Date)
+                user_name: request.EjercicioDTO.UserName,
+                lastUpdatedDate: request.EjercicioDTO.LastUpdatedDate)
                 .ConfigureAwait(false);
 
             // Concurrency check is verified by code

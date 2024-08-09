@@ -18,7 +18,7 @@ namespace MyCTB.Catalogo.BusinessDomain
         {
             Set_Nombre(nombre);
             Set_Abreviatura(abreviatura);
-            Set_EsActiva(esActiva);
+            Set_Es_Activa(esActiva);
 
             this.SecuencialesTiposAsientos = new List<Secuencial>();
         }
@@ -28,7 +28,7 @@ namespace MyCTB.Catalogo.BusinessDomain
             this.Abreviatura = value;
         }
 
-        public void Set_EsActiva(bool value)
+        public void Set_Es_Activa(bool value)
         {
             this.EsActiva = value;
         }

@@ -4,6 +4,6 @@
     {
         public int Id { get; init; }
         public string Nombre { get; init; }
-        public bool Es_Cerrado { get; init; }
+        public bool EsCerrado { get; init; }
     }
 }

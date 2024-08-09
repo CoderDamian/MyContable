@@ -14,19 +14,19 @@ namespace MyContabilidad.DataPersistence.Mappings
                 .HasColumnName("CUENTA_CONTABLE_ID");
 
             // Setting the value object
-            builder.OwnsOne(p => p.Codigo_Contable)
+            builder.OwnsOne(p => p.CodigoContable)
                 .Property(p => p.Value).HasColumnName("CODIGO_CONTABLE");
 
-            builder.OwnsOne(p => p.Codigo_Contable_Padre)
+            builder.OwnsOne(p => p.CodigoContablePadre)
                 .Property(p => p.Value).HasColumnName("CODIGO_CONTABLE_PADRE");
 
             builder.Property(p => p.Nombre)
                 .HasColumnName("NOMBRE");
 
-            builder.Property(p => p.Es_Activa)
+            builder.Property(p => p.EsActiva)
                 .HasColumnName("ES_ACTIVA");
 
-            builder.Property(p => p.Es_Auxiliar)
+            builder.Property(p => p.EsAuxiliar)
                 .HasColumnName("ES_AUXILIAR");
 
             builder.Property(p => p.UpdatedDate)

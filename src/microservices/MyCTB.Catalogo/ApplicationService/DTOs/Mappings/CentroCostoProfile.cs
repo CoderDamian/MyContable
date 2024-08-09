@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MyDTO.MyContabilidad;
 using MyCTB.Catalogo.BusinessDomain;
 
 namespace MyDTO.MyContabilidad
@@ -22,8 +21,8 @@ namespace MyDTO.MyContabilidad
                 .ReverseMap();
 
             CreateMap<CentroCosto, UpdateCentroCostoDTO>()
-                .ForMember(dest => dest.User_Name, opt => opt.MapFrom(src => src.UpdatedBy))
-                .ForMember(dest => dest.Last_Updated_Date, opt => opt.MapFrom(src => src.UpdatedDate))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UpdatedBy))
+                .ForMember(dest => dest.LastUpdatedDate, opt => opt.MapFrom(src => src.UpdatedDate))
                 .ReverseMap();
         }
     }

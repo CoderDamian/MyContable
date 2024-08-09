@@ -24,7 +24,7 @@ namespace MyCTB.Catalogo.ApplicationService
         public async Task<IEnumerable<PlanCuentasDTO>> Handle(CuentaList request, CancellationToken cancellationToken)
         {
             var cuentasContables = await _unitOfWork.CuentaRepository
-                .Get_PlanCuentas_Async(
+                .Get_Plan_Cuentas_Async(
                     offset: request.Offset,
                     fetch: request.Fetch)
                 .ConfigureAwait(false);

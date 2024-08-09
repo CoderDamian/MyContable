@@ -25,7 +25,7 @@ namespace MyCTB.Catalogo.DataPersistence
             await _myDbContext.Database.ExecuteSqlRawAsync("BEGIN cuenta_contable_pkg.add_cuenta(:p_codigo_contable_padre, :p_nombre, :p_created_by); END;", p_codigo_contable_padre, p_nombre, p_created_by).ConfigureAwait(false);
         }
 
-        public async Task<IEnumerable<Cuenta>> Get_PlanCuentas_Async(int offset, int fetch)
+        public async Task<IEnumerable<Cuenta>> Get_Plan_Cuentas_Async(int offset, int fetch)
         {
             var connection = new OracleConnection(this._myDbContext.Database.GetDbConnection().ConnectionString);
 

@@ -16,7 +16,7 @@ namespace MyContabilidad.DataPersistence.Mappings
             builder.Property(p => p.Nombre)
                 .HasColumnName("NOMBRE");
 
-            builder.Property(p => p.Es_Cerrado)
+            builder.Property(p => p.EsCerrado)
                 .HasColumnName("ES_CERRADO");
 
             builder.Property(p => p.CreatedBy)

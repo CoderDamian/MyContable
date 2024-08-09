@@ -32,7 +32,7 @@ namespace MyCTB.Catalogo.ApplicationService
             _logger.LogInformation("inside CentrosCostosListHandler ...");
 
             var centrosCostos = await this._unitOfWork.CentroCostoRepository
-                .GetAllAsync()
+                .Get_All_Async()
                 .ConfigureAwait(false);
 
             var centrosoCostosDTO = _mapper.Map<IEnumerable<ListCentrosCostosDTO>>(centrosCostos);

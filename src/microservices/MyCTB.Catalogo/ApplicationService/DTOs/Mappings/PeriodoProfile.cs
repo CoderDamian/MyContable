@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MyDTO.MyContabilidad;
 using MyCTB.Catalogo.BusinessDomain;
 
 namespace MyDTO.MyContabilidad
