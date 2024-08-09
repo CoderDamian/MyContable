@@ -13,10 +13,10 @@ namespace MyContabilidad.DataPersistence.Mappings
             builder.Property(p => p.Id)
                 .HasColumnName("PERIODO_TIPO_ASIENTO_ID");
 
-            builder.Property(p => p.Periodo_Fk)
+            builder.Property(p => p.PeriodoFk)
                 .HasColumnName("PERIODO_FK");
 
-            builder.Property(p => p.TipoAsiento_Fk)
+            builder.Property(p => p.TipoAsientoFk)
                 .HasColumnName("TIPO_ASIENTO_FK");
 
             builder.Property(p => p.Secuencia)
@@ -29,10 +29,10 @@ namespace MyContabilidad.DataPersistence.Mappings
                 .HasColumnName("UPDATED_DATE");
 
             builder.HasOne(s => s.Periodo).WithMany(p => p.SecuencialesTiposAsientos)
-                .HasForeignKey(s => s.Periodo_Fk);
+                .HasForeignKey(s => s.PeriodoFk);
 
             builder.HasOne(s => s.TipoAsiento).WithMany(t => t.SecuencialesTiposAsientos)
-                .HasForeignKey(s => s.TipoAsiento_Fk);
+                .HasForeignKey(s => s.TipoAsientoFk);
         }
     }
 }

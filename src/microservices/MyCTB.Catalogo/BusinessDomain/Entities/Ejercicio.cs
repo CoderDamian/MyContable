@@ -4,7 +4,7 @@ namespace MyCTB.Catalogo.BusinessDomain
     internal class Ejercicio : MyEntity
     {
         internal string Nombre { get; private set; } = string.Empty;
-        internal bool? Es_Cerrado { get; private set; }
+        internal bool? EsCerrado { get; private set; }
 
         public Ejercicio()
         {

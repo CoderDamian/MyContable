@@ -19,15 +19,15 @@ namespace MyCTB.Catalogo.BusinessDomain
         {
             Set_Nombre(nombre);
             Set_Fechas(fechaInicial, fechaFinal);
-            Set_EsCerrado(esCerrado);
+            Set_Es_Cerrado(esCerrado);
 
             this.SecuencialesTiposAsientos = new List<Secuencial>();
         }
 
-        public void Set_EjercicioContable_Fk(int value)
+        public void Set_Ejercicio_Contable_Fk(int value)
             => this.EjercicioContableFk = value;
 
-        public void Set_EsCerrado(bool value)
+        public void Set_Es_Cerrado(bool value)
             => this.EsCerrado = value;
 
         public void Set_Fechas(DateTime fechaInicial, DateTime fechaFinal)

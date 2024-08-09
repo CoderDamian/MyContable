@@ -16,7 +16,7 @@ namespace MyCTB.Catalogo.BusinessDomain
         public void Set_Id(int value)
             => this.Id = value;
 
-        public void Set_CreatedBy(string? value)
+        public void Set_Created_By(string? value)
         {
             if (String.IsNullOrEmpty(value))
             {
@@ -28,12 +28,12 @@ namespace MyCTB.Catalogo.BusinessDomain
             }
         }
 
-        public void Set_Last_UpdatedDate(DateTime? value)
+        public void Set_Last_Updated_Date(DateTime? value)
         {
             this.UpdatedDate = value;
         }
 
-        public void Set_UpdatedBy(string? value)
+        public void Set_Updated_By(string? value)
         {
             if (String.IsNullOrEmpty(value))
             {

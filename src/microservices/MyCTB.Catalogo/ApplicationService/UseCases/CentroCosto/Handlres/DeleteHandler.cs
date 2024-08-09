@@ -33,7 +33,7 @@ namespace MyCTB.Catalogo.ApplicationService
         public async Task Handle(CentroCostoDelete request, CancellationToken cancellationToken)
         {
             await this._unitOfWork.CentroCostoRepository
-                .Delete_Async(id: request.CentroCostoId, updatedBy: request.CentroCostoDTO.UserName, concurrency_token: request.CentroCostoDTO.LastUpdatedDate)
+                .Delete_Async(id: request.CentroCostoId, updatedBy: request.CentroCostoDTO.UserName, concurrencyToken: request.CentroCostoDTO.LastUpdatedDate)
                 .ConfigureAwait(false);
 
             //Not necessary call to Save_Async() since the repository use ExecuteSqlRawAsync

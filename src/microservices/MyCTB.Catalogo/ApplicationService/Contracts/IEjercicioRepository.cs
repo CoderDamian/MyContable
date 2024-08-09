@@ -10,6 +10,6 @@ namespace MyCTB.Catalogo.ApplicationService
 
         Task<Ejercicio?> Get_By_Id_Async(int id);
 
-        Task<int> Update_Async(int id, string nombre, string user_name, DateTime? last_updated_date);
+        Task<int> Update_Async(int id, string nombre, string user_name, DateTime? lastUpdatedDate);
     }
 }

@@ -32,7 +32,7 @@ namespace MyCTB.Catalogo.ApplicationService
                 .Delete_Async(
                     id: request.TipoAsientoId,
                     updatedBy: request.TipoAsientoDTO.UserName,
-                    concurrency_token: request.TipoAsientoDTO.LastUpdatedDate)
+                    concurrencyToken: request.TipoAsientoDTO.LastUpdatedDate)
                 .ConfigureAwait(false);
 
             if (rows_affected != 1)

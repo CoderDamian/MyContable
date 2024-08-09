@@ -6,7 +6,7 @@ namespace MyCTB.Catalogo.ApplicationService
     {
         Task Add_Async(TipoAsiento tipoAsientoContable);
 
-        Task<int> Delete_Async(int id, string updatedBy, DateTime? concurrency_token);
+        Task<int> Delete_Async(int id, string updatedBy, DateTime? concurrencyToken);
 
         /// <summary>
         /// 

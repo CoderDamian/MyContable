@@ -6,12 +6,12 @@ namespace MyCTB.Catalogo.ApplicationService
     {
         Task Add_Async(int centroCostoPadreId, string nombre, string userName);
 
-        Task Delete_Async(int id, string updatedBy, DateTime? concurrency_token);
+        Task Delete_Async(int id, string updatedBy, DateTime? concurrencyToken);
         
-        Task<IEnumerable<CentroCosto>> GetAllAsync();
+        Task<IEnumerable<CentroCosto>> Get_All_Async();
         
         Task<CentroCosto?> Get_By_Id_Async(int id);
-        
+
         void Update(CentroCosto centroCosto);
     }
 }

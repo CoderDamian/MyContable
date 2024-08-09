@@ -6,7 +6,6 @@ namespace MyCTB.Catalogo.ApplicationService
     {
         Task Add_Async(string nombre, DateTime fechaInicial, Int16 numeroPeriodos, char longitud, string userName);
 
-#warning los repositorios deben devolver entities o dtos ?       
         Task<IEnumerable<ListPeriodoDTO>> Get_All_Async();
     }
 }

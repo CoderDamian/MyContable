@@ -46,11 +46,11 @@ namespace MyCTB.Catalogo.DataPersistence
             {
                 secuencialesDTOs.Add(new ListSecuencialDTO()
                 {
-                    Nombre_Ejercicio_Contable = dataReader.GetString(0),
-                    Nombre_Periodo = dataReader.GetString(1),
-                    Fecha_Inicial_Periodo = dataReader.GetDateTime(2),
-                    Fecha_Final_Periodo = dataReader.GetDateTime(3),
-                    Tipo_Asiento = dataReader.GetString(4),
+                    NombreEjercicioContable = dataReader.GetString(0),
+                    NombrePeriodo = dataReader.GetString(1),
+                    FechaInicialPeriodo = dataReader.GetDateTime(2),
+                    FechaFinalPeriodo = dataReader.GetDateTime(3),
+                    TipoAsiento = dataReader.GetString(4),
                     Secuencial = dataReader.GetInt32(5)
                 });
             }

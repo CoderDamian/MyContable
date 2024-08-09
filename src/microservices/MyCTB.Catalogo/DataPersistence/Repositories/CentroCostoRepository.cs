@@ -45,7 +45,7 @@ namespace MyCTB.Catalogo.DataPersistence
         /// 
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<CentroCosto>> GetAllAsync()
+        public async Task<IEnumerable<CentroCosto>> Get_All_Async()
         {
             using var oracleConnection = new OracleConnection(this._myDbContext.Database.GetDbConnection().ConnectionString);
 

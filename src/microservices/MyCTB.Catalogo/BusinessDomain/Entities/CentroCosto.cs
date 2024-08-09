@@ -14,12 +14,12 @@ namespace MyCTB.Catalogo.BusinessDomain
 
         public CentroCosto(int centroCostoPadre, string nombre, bool esAuxiliar)
         {
-            Set_CentroCostoPadre(centroCostoPadre);
+            Set_Centro_Costo_Padre(centroCostoPadre);
             Set_Nombre(nombre);
-            Set_EsAuxiliar(esAuxiliar);
+            Set_Es_Auxiliar(esAuxiliar);
         }
 
-        public void Set_CentroCostoPadre(int value)
+        public void Set_Centro_Costo_Padre(int value)
         {
             this.PadreId = value;
         }
@@ -29,7 +29,7 @@ namespace MyCTB.Catalogo.BusinessDomain
             this.Nombre = value;
         }
 
-        public void Set_EsAuxiliar(bool value)
+        public void Set_Es_Auxiliar(bool value)
         {
             this.EsAuxiliar = value;
         }

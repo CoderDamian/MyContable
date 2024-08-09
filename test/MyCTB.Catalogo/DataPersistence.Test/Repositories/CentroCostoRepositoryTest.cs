@@ -12,7 +12,7 @@ namespace DataPersistence.Test
             var uow = new UnitOfWork(myDbContext);
 
             var centroCosto = await uow.CentroCostoRepository
-                .GetAllAsync();
+                .Get_All_Async();
 
             Assert.NotNull(centroCosto);
         }
