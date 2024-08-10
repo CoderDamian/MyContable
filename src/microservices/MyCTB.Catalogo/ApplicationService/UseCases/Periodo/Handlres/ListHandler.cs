@@ -17,7 +17,7 @@ namespace MyCTB.Catalogo.ApplicationService
             
         }
 
-        internal PeriodosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public PeriodosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;

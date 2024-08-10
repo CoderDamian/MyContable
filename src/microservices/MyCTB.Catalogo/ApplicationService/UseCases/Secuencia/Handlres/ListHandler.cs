@@ -17,7 +17,7 @@ namespace MyCTB.Catalogo.ApplicationService
             
         }
 
-        internal SecuencialesListHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public SecuencialesListHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork ?? throw new ArgumentNullException(MyMessages.uow_not_be_null);
             this._mapper = mapper ?? throw new ArgumentNullException(MyMessages.mapper_not_be_null);

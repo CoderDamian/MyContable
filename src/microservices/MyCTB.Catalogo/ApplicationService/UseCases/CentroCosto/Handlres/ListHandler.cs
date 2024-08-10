@@ -10,7 +10,7 @@ namespace MyCTB.Catalogo.ApplicationService
     /// </summary>
     internal class CentrosCostosListHandler : IRequestHandler<CentroCostoList, IEnumerable<ListCentrosCostosDTO>>
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<CentrosCostosListHandler> _logger;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
@@ -21,15 +21,15 @@ namespace MyCTB.Catalogo.ApplicationService
 
         public CentrosCostosListHandler(ILogger<CentrosCostosListHandler> logger, IUnitOfWork unitOfWork, IMapper mapper)
         {
-            this._logger = logger;
-            this._unitOfWork = unitOfWork;
-            this._mapper = mapper;
+            _logger = logger;
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         // el metodo debe ser del tipo PUBLIC porque asi lo exige MediatR
         public async Task<IEnumerable<ListCentrosCostosDTO>> Handle(CentroCostoList request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation("inside CentrosCostosListHandler ...");
+            _logger.LogInformation("inside CentrosCostosListHandler !!!");
 
             var centrosCostos = await this._unitOfWork.CentroCostoRepository
                 .Get_All_Async()

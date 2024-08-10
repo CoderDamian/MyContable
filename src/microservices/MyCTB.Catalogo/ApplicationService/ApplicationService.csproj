@@ -17,13 +17,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="UseCases\Cuenta Not\Commands\" />
+		<Folder Include="UseCases\Cuenta\Commands\" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="DataPersistence" />
 		<InternalsVisibleTo Include="WebServices" />
-		<InternalsVisibleTo Include="DataPersistence.Test"/>
+		<InternalsVisibleTo Include="DataPersistence.Test" />
 	</ItemGroup>
 
 </Project>
