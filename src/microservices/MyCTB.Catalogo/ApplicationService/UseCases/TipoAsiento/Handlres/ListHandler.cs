@@ -17,7 +17,7 @@ namespace MyCTB.Catalogo.ApplicationService
             
         }
 
-        internal TiposAsientosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public TiposAsientosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
             this._mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));

@@ -12,12 +12,12 @@ namespace MyCTB.Catalogo.ApplicationService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public EjerciciosListHandler()
-        {
+        //public EjerciciosListHandler()
+        //{
             
-        }
+        //}
 
-        internal EjerciciosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public EjerciciosListHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this._unitOfWork = unitOfWork;
             this._mapper = mapper;

@@ -5,7 +5,7 @@ namespace MyCTB.Catalogo.ApplicationService
     /// <summary>
     /// Define los identificadores de evento
     /// </summary>
-    internal static class AppLogEvents
+    internal static class MyAppLogEvents
     {
         internal static EventId Create = new (4000, "Error trying to insert a record in database");
         internal static EventId Delete = new(1003, "Deleted");

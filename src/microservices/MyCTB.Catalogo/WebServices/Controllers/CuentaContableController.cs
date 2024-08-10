@@ -7,15 +7,15 @@ namespace MyCTB.Catalogo.WebServices
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class CuentaController : ControllerBase
+    public class CuentaContableController : ControllerBase
     {
-        private readonly ILogger<CuentaController> _logger;
+        private readonly ILogger<CuentaContableController> _logger;
         private readonly IMediator _mediator;
 
-        public CuentaController(ILogger<CuentaController> logger, IMediator mediator)
+        public CuentaContableController(ILogger<CuentaContableController> logger, IMediator mediator)
         {
-            this._logger = logger;
-            this._mediator = mediator;
+            _logger = logger;
+            _mediator = mediator;
 
             _logger.LogDebug(1, "NLog injected into HomeController");
         }
@@ -31,8 +31,9 @@ namespace MyCTB.Catalogo.WebServices
             }
             catch (Exception ex)
             {
-                var errorId = Guid.NewGuid();
-                _logger.LogError($"Error ocurred in API: {errorId} {ex.Message}");
+                _logger.LogError(nameof(Add_Cuenta));
+
+                _logger.LogError(MyAppLogEvents.ReadNotFound, "{mensaje} {pilaLlamada}", ex.Message, ex); // recomendacion microsoft CA2254
 
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
@@ -50,8 +51,9 @@ namespace MyCTB.Catalogo.WebServices
             }
             catch (Exception ex)
             {
-                var errorId = Guid.NewGuid();
-                _logger.LogError($"Error ocurred in API: {errorId} {ex.Message}");
+                _logger.LogError(nameof(Get_Plan_Cuenta));
+
+                _logger.LogError(MyAppLogEvents.ReadNotFound, "{mensaje} {pilaLlamada}", ex.Message, ex); // recomendacion microsoft CA2254
 
                 //_httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 

@@ -22,6 +22,11 @@ namespace MyCTB.Catalogo.WebServices
             this._mediator = mediator;
         }
 
+        /// <summary>
+        /// el mensaje de error cumple con la recomendacion microsoft CA2254
+        /// </summary>
+        /// <param name="centroCostoDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddCentroCostoDTO centroCostoDTO)
         {
@@ -33,8 +38,7 @@ namespace MyCTB.Catalogo.WebServices
             }
             catch (Exception ex)
             {
-                var errorId = Guid.NewGuid();
-                this._logger.LogError($"Error ocurred in API: {errorId} {ex.Message}");
+                _logger.LogError(MyAppLogEvents.Create, "{mensaje} {pillaLlamada}", ex.Message, ex); 
 
                 ModelState.AddModelError(nameof(ex), ex.Message);
                 return ValidationProblem();
@@ -68,7 +72,7 @@ namespace MyCTB.Catalogo.WebServices
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get_All()
+        public async Task<IActionResult> GetAllAsync()
         {
             try
             {
@@ -80,7 +84,7 @@ namespace MyCTB.Catalogo.WebServices
             }
             catch (Exception ex)
             {
-                _logger.LogError(AppLogEvents.ReadNotFound, "{Message} {PilaLlamada}", ex.Message, ex);
+                _logger.LogError(MyAppLogEvents.ReadNotFound, "{Message} {PilaLlamada}", ex.Message, ex); // recomendacion microsoft CA2254
 
                 ModelState.AddModelError(nameof(ex), ex.Message);
 
