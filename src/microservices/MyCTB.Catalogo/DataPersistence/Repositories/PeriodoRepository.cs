@@ -24,7 +24,7 @@ namespace MyCTB.Catalogo.DataPersistence
             var p_longitud_periodo = new OracleParameter("p_longitud_periodo", OracleDbType.NVarchar2, longitud, ParameterDirection.Input);
             var p_created_by = new OracleParameter("p_created_by", OracleDbType.NVarchar2, userName, ParameterDirection.Input);
 
-            await this._myDbContext.Database.ExecuteSqlRawAsync("BEGIN periodo_pkg.ins_new_periodo (:p_nombre, :p_fecha_inicial, :p_numero_periodos, :p_longitud_periodo, :p_created_by); END;", p_nombre, p_fecha_inicial, p_numero_periodos, p_longitud_periodo, p_longitud_periodo, p_created_by).ConfigureAwait(false);
+            await this._myDbContext.Database.ExecuteSqlRawAsync("BEGIN ctb_periodo_pkg.ins_new_periodo (:p_nombre, :p_fecha_inicial, :p_numero_periodos, :p_longitud_periodo, :p_created_by); END;", p_nombre, p_fecha_inicial, p_numero_periodos, p_longitud_periodo, p_longitud_periodo, p_created_by).ConfigureAwait(false);
         }
 
         public async Task<IEnumerable<ListPeriodoDTO>> Get_All_Async()
@@ -37,7 +37,7 @@ namespace MyCTB.Catalogo.DataPersistence
             {
                 await connection.OpenAsync().ConfigureAwait(false);
 
-                using (var command = new OracleCommand("periodo_pkg.get_all", connection))
+                using (var command = new OracleCommand("ctb_periodo_pkg.get_all", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 

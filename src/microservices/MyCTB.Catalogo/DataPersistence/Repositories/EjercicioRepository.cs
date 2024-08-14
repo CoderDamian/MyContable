@@ -35,7 +35,7 @@ namespace MyCTB.Catalogo.DataPersistence
             var p_last_updated_date = new OracleParameter("p_last_updated_date", OracleDbType.TimeStamp, last_updated_date, ParameterDirection.Input);
             var p_affected_rows = new OracleParameter("p_affected_rows", OracleDbType.Int32, ParameterDirection.Output);
 
-            await this._myDbContext.Database.ExecuteSqlRawAsync("BEGIN ejercicio_contable_pkg.update_ejercicio_contable (:p_id, :p_nombre, :p_user_name, :p_last_updated_date, :p_affected_rows); END;", p_id, p_nombre, p_user_name, p_last_updated_date, p_affected_rows);
+            await this._myDbContext.Database.ExecuteSqlRawAsync("BEGIN ctb_ejercicio_contable_pkg.update_ejercicio_contable (:p_id, :p_nombre, :p_user_name, :p_last_updated_date, :p_affected_rows); END;", p_id, p_nombre, p_user_name, p_last_updated_date, p_affected_rows);
 
             return Convert.ToInt32(p_affected_rows.Value.ToString());
         }

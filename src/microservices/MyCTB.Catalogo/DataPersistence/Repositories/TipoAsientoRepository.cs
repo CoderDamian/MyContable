@@ -30,7 +30,7 @@ namespace MyCTB.Catalogo.DataPersistence
             var p_rows_affected = new OracleParameter("p_rows_affected", OracleDbType.Int32, ParameterDirection.Output);
 
             await this._myDbContext.Database
-                .ExecuteSqlRawAsync("BEGIN tipo_asiento_pkg.delete_by_id(:p_tipo_asiento_id, :p_updated_by, :p_concurrency_token, :p_rows_affected); END;", p_tipo_asiento_id, p_updated_by, p_concurrency_token, p_rows_affected)
+                .ExecuteSqlRawAsync("BEGIN ctb_tipo_asiento_pkg.delete_by_id(:p_tipo_asiento_id, :p_updated_by, :p_concurrency_token, :p_rows_affected); END;", p_tipo_asiento_id, p_updated_by, p_concurrency_token, p_rows_affected)
                 .ConfigureAwait(false);
 
             return Convert.ToInt32(p_rows_affected.Value.ToString());
