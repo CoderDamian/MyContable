@@ -14,7 +14,12 @@ namespace MyCTB.Catalogo.ApplicationService
             
         }
 
-        internal PeriodoCreateHandler(IUnitOfWork unitOfWork)
+        /// <summary>
+        /// la visibilidad debe ser public
+        /// </summary>
+        /// <param name="unitOfWork"></param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public PeriodoCreateHandler(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }

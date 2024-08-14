@@ -22,14 +22,14 @@ namespace MyCTB.Catalogo.DataPersistence
             var p_nombre = new OracleParameter("p_nombre", OracleDbType.NVarchar2, nombre, ParameterDirection.Input);
             var p_created_by = new OracleParameter("p_created_by", OracleDbType.NVarchar2, createdBy, ParameterDirection.Input);
 
-            await _myDbContext.Database.ExecuteSqlRawAsync("BEGIN cuenta_contable_pkg.add_cuenta(:p_codigo_contable_padre, :p_nombre, :p_created_by); END;", p_codigo_contable_padre, p_nombre, p_created_by).ConfigureAwait(false);
+            await _myDbContext.Database.ExecuteSqlRawAsync("BEGIN ctb_cuenta_contable_pkg.add_cuenta(:p_codigo_contable_padre, :p_nombre, :p_created_by); END;", p_codigo_contable_padre, p_nombre, p_created_by).ConfigureAwait(false);
         }
 
         public async Task<IEnumerable<Cuenta>> Get_Plan_Cuentas_Async(int offset, int fetch)
         {
             var connection = new OracleConnection(this._myDbContext.Database.GetDbConnection().ConnectionString);
 
-            var command = new OracleCommand("cuenta_contable_pkg.get_plan_cuentas", connection);
+            var command = new OracleCommand("ctb_cuenta_contable_pkg.get_plan_cuentas", connection);
             command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.Add("p_cuentas", OracleDbType.RefCursor, ParameterDirection.ReturnValue);

@@ -30,7 +30,7 @@ namespace MyCTB.Catalogo.DataPersistence
             using OracleConnection oracleConnection = new(this._myDbContext.Database.GetDbConnection().ConnectionString);
 
             // Setting the procedure
-            using OracleCommand command = new("periodo_tipo_asiento_pkg.list_sequences", oracleConnection);
+            using OracleCommand command = new("ctb_periodo_tipo_asiento_pkg.list_sequences", oracleConnection);
             command.CommandType = CommandType.StoredProcedure;
 
             // Setting the parameters

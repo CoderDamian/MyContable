@@ -25,7 +25,7 @@ namespace MyCTB.Catalogo.DataPersistence
             var p_nombre = new OracleParameter("p_nombre", OracleDbType.NVarchar2, nombre, ParameterDirection.Input);
             var p_created_by = new OracleParameter("p_created_by", OracleDbType.NVarchar2, userName, ParameterDirection.Input);
 
-            await _myDbContext.Database.ExecuteSqlRawAsync("BEGIN centro_costo_pkg.add_new (:p_centro_costo_padre, :p_nombre, :p_created_by); END;", p_centro_costo_padre, p_nombre, p_created_by).ConfigureAwait(false);
+            await _myDbContext.Database.ExecuteSqlRawAsync("BEGIN ctb_centro_costo_pkg.add_new (:p_centro_costo_padre, :p_nombre, :p_created_by); END;", p_centro_costo_padre, p_nombre, p_created_by).ConfigureAwait(false);
         }
 
         public async Task Delete_Async(int id, string updatedBy, DateTime? concurrency_token)
@@ -35,7 +35,7 @@ namespace MyCTB.Catalogo.DataPersistence
             var p_concurrency_token = new OracleParameter("p_concurrency_token", OracleDbType.TimeStamp, concurrency_token, ParameterDirection.Input);
             var p_rows_affected = new OracleParameter("p_rows_affected", OracleDbType.Int32, ParameterDirection.Output);
 
-            await this._myDbContext.Database.ExecuteSqlRawAsync("BEGIN centro_costo_pkg.delete_by_id(:p_centro_costo_id, :p_updated_by, :p_concurrency_token, :p_rows_affected); END;", p_centro_costo_id, p_updated_by, p_concurrency_token, p_rows_affected).ConfigureAwait(false);
+            await this._myDbContext.Database.ExecuteSqlRawAsync("BEGIN ctb_centro_costo_pkg.delete_by_id(:p_centro_costo_id, :p_updated_by, :p_concurrency_token, :p_rows_affected); END;", p_centro_costo_id, p_updated_by, p_concurrency_token, p_rows_affected).ConfigureAwait(false);
 
             if (p_rows_affected.Value.ToString() == "0")
                 throw new DbUpdateConcurrencyException();
@@ -50,7 +50,7 @@ namespace MyCTB.Catalogo.DataPersistence
             using var oracleConnection = new OracleConnection(this._myDbContext.Database.GetDbConnection().ConnectionString);
 
             //setting the procedure
-            OracleCommand command = new("centro_costo_pkg.get_all", oracleConnection);
+            OracleCommand command = new("ctb_centro_costo_pkg.get_all", oracleConnection);
             command.CommandType = CommandType.StoredProcedure;
 
             // setting the parameters
